@@ -1,0 +1,17 @@
+#! /bin/sh
+
+# start compostion
+compton -b &
+# set wallpaper
+~/.fehbg
+
+# set touchpad settings
+xinput set-prop 11 290 1
+
+# start bar
+polybar example &
+
+# other stuff
+redshift &
+~/.bin/batnote &
+dropbox start &
