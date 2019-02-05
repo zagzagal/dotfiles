@@ -1,0 +1,58 @@
+
+Black:
+color0 #1A1A1A
+color8 #333333
+
+Red:
+color1 #EF4335
+color9 #FF5D4F
+
+Green:
+color2 #CAE081
+color10 #E4FA98
+
+Yellow:
+color3 #F2CD4F
+color11 #FFFF82
+
+Blue:
+color4 #9C87ED
+color12 #CFBAFF
+
+Magenta:
+color5 #ED87A6
+color13 #FFBAD9
+
+Cyan:
+color6 #88EED0
+color14 #BBFFFF
+
+Whide:
+color7 #D8D8C0
+color15 #F2F2DA
+
+
+ALT
+Black:
+color0 #090C08
+ 
+Red:
+color1 #D9594C
+
+Green:
+color2 #419D78
+
+Yellow:
+color3 #E0A458
+
+Blue:
+color4 #014C74
+
+Magenta:
+color5 #6A0136
+
+Cyan:
+color6 #729EA1
+
+White:
+color7 #FFDBB5
