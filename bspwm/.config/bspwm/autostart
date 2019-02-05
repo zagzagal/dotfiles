@@ -2,6 +2,7 @@
 
 # start compostion
 compton -b &
+
 # set wallpaper
 ~/.fehbg
 
@@ -9,7 +10,7 @@ compton -b &
 xinput set-prop 11 290 1
 
 # start bar
-polybar example &
+polybar topbar &
 
 # other stuff
 redshift &
