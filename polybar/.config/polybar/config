@@ -49,9 +49,10 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Anonymous Pro:size=9;0
+font-0 = hack:fontformat=truetype:size=8;1
 font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 font-2 = siji:pixelsize=10;1
+font-3 = optien:fontformat=truetype:size=9;1
 
 modules-left = powermenu cpu memory bspwm moc
 modules-center = updates-void date 
@@ -59,7 +60,7 @@ modules-right = redshift alsa wlan eth battery
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
+tray-background = ${colors.background} 
 
 ;wm-restack = bspwm
 
@@ -103,7 +104,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.background-alt} 
-label = %percentage:2%%
+label = [%percentage:2%%]
 
 [module/memory]
 type = internal/memory
@@ -111,16 +112,16 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.background-alt} 
-label = %percentage_used%%
+label = [%percentage_used%%]
 
 [module/wlan]
 type = internal/network
 interface = wlp2s0 
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.primary} 
-label-connected = %essid%
+format-connected = <label-connected>
+format-connected-underline = ${colors.background-alt} 
+label-connected = %{T4}%essid%%{T-} [%signal%%]
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -197,8 +198,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume = <label-volume>
+label-volume = %{T4}Vol%{T-} [%percentage%%]
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -228,11 +229,13 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
 format-charging-underline = ${colors.primary} 
+label-charging = %{T4}Chr%{T-} [%percentage%%]
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${colors.secondary} 
+format-discharging = <label-discharging>
+format-discharging-underline = ${colors.secondary}
+label-discharging = %{T4}Bat%{T-} [%percentage%%]
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
@@ -327,7 +330,7 @@ type = custom/script
 exec = ~/.config/polybar/redshift.fish
 interval = 60
 
-format = <label>
+format = %{T4}<label>%{T-}
 format-foreground = ${colors.background-alt}
 
 [settings]
