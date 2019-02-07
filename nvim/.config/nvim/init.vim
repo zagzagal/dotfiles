@@ -7,7 +7,7 @@ Plug 'dag/vim-fish'
 
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	Plug 'zchee/deoplete-go', { 'build': {'unix': 'make'}}
+	Plug 'zchee/deoplete-go', { 'do': 'make'}
 endif
 
 call plug#end()

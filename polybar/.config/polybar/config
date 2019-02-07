@@ -57,7 +57,7 @@ font-3 = optien:fontformat=truetype:size=9;1
 
 ;modules-left = powermenu cpu memory bspwm moc
 modules-left = powermenu bspwm moc
-modules-center = updates-void date 
+modules-center = updates-void date
 modules-right = redshift alsa wlan eth battery
 
 tray-position = right
@@ -81,15 +81,15 @@ label = %title:0:30:...%
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %name%
+label-focused = %{T4}%name%%{T-}
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.background-alt}
 label-focused-padding = 2
 
-label-occupied = %name%
+label-occupied = %{T4}%{F#E0A458}%name%%{F-}%{T-}
 label-occupied-padding = 1
 
-label-urgent = %index%!
+label-urgent = %{T4}%name%!%{T-}
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -299,20 +299,20 @@ label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
+menu-0-0 = %{T4}reboot%{T-}
 menu-0-0-exec = menu-open-1
-menu-0-1 = power off
+menu-0-1 = %{T4}power off%{T-}
 menu-0-1-exec = menu-open-2
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+;menu-1-1 = %{T4}cancel%{T-}
+;menu-1-1-exec = menu-open-0
+menu-1-0 = %{T4}reboot%{T-}
+menu-1-0-exec = sudo reboot
 
-menu-2-0 = power off
+menu-2-0 = %{T4}power off%{T-}
 menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+;menu-2-1 = %{T4}cancel%{T-}
+;menu-2-1-exec = menu-open-0
 
 [module/updates-void]
 type = custom/script
@@ -325,10 +325,13 @@ format-foreground = ${colors.alert}
 [module/moc]
 type = custom/script
 exec = ~/.config/polybar/moc.fish
-interval = 10
+;interval = 10
+tail = true
 
 format = <label>
 format-foreground = ${colors.foreground-alt}
+
+label = %output:0:29:...%
 
 [module/redshift]
 type = custom/script

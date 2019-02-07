@@ -10,7 +10,7 @@ compton -b &
 xinput set-prop 11 290 1
 
 # start bar
-polybar topbar &
+polybar -r topbar &
 
 # other stuff
 redshift &

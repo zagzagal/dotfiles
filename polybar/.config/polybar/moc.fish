@@ -1,24 +1,34 @@
 #! /usr/bin/env fish
 
-set -l info (mocp -i)
+while true
+  sleep 5
 
-set -l state (echo $info | mwk 'State: (\w+)' '$1')
+  set -l running (ps -ef | grep -v grep | grep mocp | wc -l)
+  if test "$running" = "0"
+    echo ""
+    continue
+  end
 
-switch $state
-case PAUSE
-  set -l title (echo $info | mwk 'Title: (.*)Art' '$1')
-  if test "$title" = ""
-    echo "Paused: No title"
-else
-  echo "Paused: $title"
-end
-case PLAY
-  set -l title (echo $info | mwk 'Title: (.*)Art' '$1')
-  if test "$title" = ""
-    echo "Playing: No title"
-else
-  echo "Playing: $title"
-end
-case STOP
-  echo "Stopped"
+  set -l info (mocp -i)
+  switch (echo $info | mwk 'State: (\w+)' '$1') 
+  case PAUSE
+    set -l title (echo $info | mwk 'Title: (.*)Art' '$1')
+    if test "$title" = ""
+      echo "Paused: No title"
+    else
+      echo "Paused: $title"
+    end
+  case PLAY
+    set -l title (echo $info | mwk 'Title: (.*)Art' '$1')
+    if test "$title" = ""
+      echo "Playing: No title"
+    else
+      echo "Playing: $title"
+    end
+  case STOP
+    echo "Stopped"
+  case "*"
+    echo ""
+  end
+
 end
