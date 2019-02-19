@@ -58,7 +58,7 @@ font-3 = optien:fontformat=truetype:size=9;1
 ;modules-left = powermenu cpu memory bspwm moc
 modules-left = powermenu bspwm moc
 modules-center = updates-void date
-modules-right = redshift alsa wlan eth battery
+modules-right = redshift alsa wlan eth newBattery
 
 tray-position = right
 tray-padding = 2
@@ -340,6 +340,14 @@ interval = 60
 
 format = %{T4}<label>%{T-}
 format-foreground = ${colors.background-alt}
+
+[module/newBattery]
+type = custom/script
+exec = ~/.config/polybar/batnote
+tail = true
+
+format = <label>
+format-underline = ${colors.secondary}
 
 [settings]
 screenchange-reload = true
