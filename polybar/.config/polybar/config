@@ -17,13 +17,17 @@
 ;==========================================================
 
 [colors]
-background = #80000000
-background-alt = #80013C74
-foreground = #FFDBB5
+background = #CC887479
+background-alt = #CC55645F
+foreground = #010312
 foreground-alt = #014C74
-primary = #419D78
-secondary = #E0A458
-alert = #D9594C
+primary = #9dbf9e
+secondary = #d0d6b5
+alert = #f9b5ac
+color1 = #887479
+color2 = #95867F
+color3 = #55645F
+color4 = #778370
 
 
 [bar/topbar]
@@ -58,7 +62,7 @@ font-3 = optien:fontformat=truetype:size=9;1
 ;modules-left = powermenu cpu memory bspwm moc
 modules-left = powermenu bspwm moc
 modules-center = updates-void date
-modules-right = redshift alsa wlan eth newBattery
+modules-right = redshift alsa wlan eth battery
 
 tray-position = right
 tray-padding = 2
@@ -86,7 +90,8 @@ label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.background-alt}
 label-focused-padding = 2
 
-label-occupied = %{T4}%{F#E0A458}%name%%{F-}%{T-}
+;label-occupied = %{T4}%{F#E0A458}%name%%{F-}%{T-}
+lable-occupied = %{T4}%name%%{T-}
 label-occupied-padding = 1
 
 label-urgent = %{T4}%name%!%{T-}
@@ -123,7 +128,7 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-underline = ${colors.background-alt} 
-label-connected = %{T4}%{F#E0A458}%essid%%{F-}%{T-} [%signal%%]
+label-connected = %{T4}%essid%%{T-} [%signal%%]
 label-signal = [%signal%%]
 
 format-disconnected =
@@ -169,7 +174,7 @@ time-alt = %H:%M:%S
 ;format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = ${colors.foreground-alt} 
 
-label = [ %{F#E0A458}%date% %time%%{F-} ]
+label = [ %date% %time% ]
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -203,7 +208,7 @@ type = internal/alsa
 
 format-volume = <label-volume>
 format-volume-underline = ${colors.background-alt}
-label-volume = %{F#E0A458}%{T4}Vol%{T-}%{F-} [%percentage%%]
+label-volume = %{T4}Vol%{T-} [%percentage%%]
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -236,11 +241,11 @@ full-at = 98
 
 format-charging = <label-charging>
 format-charging-underline = ${colors.primary} 
-label-charging = %{F#D9594C}%{T4}Chr%{T-}%{F-} [%percentage%%]
+label-charging = %{T4}Chr%{T-} [%percentage%%]
 
 format-discharging = <label-discharging>
 format-discharging-underline = ${colors.secondary}
-label-discharging = %{F#E0A458}%{T4}Bat%{T-}%{F-} [%percentage%%]
+label-discharging = %{T4}Bat%{T-} [%percentage%%]
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
@@ -255,7 +260,6 @@ ramp-capacity-2-foreground = ${colors.primary}
 ;ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 = 
-animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
@@ -300,19 +304,9 @@ label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = %{T4}reboot%{T-}
-menu-0-0-exec = menu-open-1
+menu-0-0-exec = sudo reboot 
 menu-0-1 = %{T4}power off%{T-}
-menu-0-1-exec = menu-open-2
-
-;menu-1-1 = %{T4}cancel%{T-}
-;menu-1-1-exec = menu-open-0
-menu-1-0 = %{T4}reboot%{T-}
-menu-1-0-exec = sudo reboot
-
-menu-2-0 = %{T4}power off%{T-}
-menu-2-0-exec = sudo poweroff
-;menu-2-1 = %{T4}cancel%{T-}
-;menu-2-1-exec = menu-open-0
+menu-0-1-exec = sudo poweroff 
 
 [module/updates-void]
 type = custom/script
@@ -341,13 +335,13 @@ interval = 60
 format = %{T4}<label>%{T-}
 format-foreground = ${colors.background-alt}
 
-[module/newBattery]
-type = custom/script
-exec = ~/.config/polybar/batnote
-tail = true
+;[module/newBattery]
+;type = custom/script
+;exec = ~/.config/polybar/batnote
+;tail = true
 
-format = <label>
-format-underline = ${colors.secondary}
+;format = <label>
+;format-underline = ${colors.secondary}
 
 [settings]
 screenchange-reload = true

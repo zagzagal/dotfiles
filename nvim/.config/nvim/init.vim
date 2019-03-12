@@ -4,6 +4,8 @@ Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dag/vim-fish'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'othree/html5.vim'
 
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

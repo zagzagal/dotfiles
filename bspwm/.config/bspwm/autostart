@@ -14,5 +14,4 @@ polybar -r topbar &
 
 # other stuff
 redshift &
-~/.bin/batnote &
 dropbox start &
