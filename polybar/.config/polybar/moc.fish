@@ -10,20 +10,21 @@ while true
   end
 
   set -l info (mocp -i)
-  switch (echo $info | mwk 'State: (\w+)' '$1') 
+  set -l state (echo $info | string match -r "State: (\w+)")
+  switch $state[2] 
   case PAUSE
-    set -l title (echo $info | mwk 'Title: (.*)Art' '$1')
-    if test "$title" = ""
+    set -l title (echo $info | string match -r 'Title: (.*)Art' )
+    if test $status -ne 0
       echo "Paused: No title"
     else
-      echo "Paused: $title"
+      echo "Paused: $title[2]"
     end
   case PLAY
-    set -l title (echo $info | mwk 'Title: (.*)Art' '$1')
-    if test "$title" = ""
+    set -l title (echo $info | string match -r 'Title: (.*)Art' )
+    if test $status -ne 0
       echo "Playing: No title"
     else
-      echo "Playing: $title"
+      echo "Playing: $title[2]"
     end
   case STOP
     echo "Stopped"
