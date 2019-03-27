@@ -3,8 +3,8 @@
 while true
   sleep 5
 
-  set -l running (ps -ef | grep -v grep | grep mocp | wc -l)
-  if test "$running" = "0"
+  set -l running (ps -ef | grep -v grep | string match -e "mocp")
+  if test $status -ne 0
     echo ""
     continue
   end

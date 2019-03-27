@@ -1,11 +1,10 @@
 #! /usr/bin/env fish
 
-sleep 30
+set -l updates (xbps-install -Suvn 2> /dev/null | string match -a -e "Found")
 
-set -l updates (xbps-install -Suvn 2> /dev/null | mrep "Found" | wc -l)
-
-if test "$updates" -gt 0
-  echo "$updates updates"
-else
+if test $status -ne 0
   echo ""
+else
+  set -l num (count $updates)
+  echo "$num updates"
 end

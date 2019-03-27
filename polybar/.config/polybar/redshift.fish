@@ -1,9 +1,7 @@
 #! /usr/bin/env fish
 
-set -l info (redshift -p 2> /dev/null)
+redshift -p 2> /dev/null | string match -e 'Night' > /dev/null
 
-set -l period (echo $info | mwk 'Period: (\w*)' '$1')
-
-if test $period = "Night"
-  echo "$period"
+if test $status -eq 0
+  echo "Night"
 end
