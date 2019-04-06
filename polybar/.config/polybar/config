@@ -17,13 +17,13 @@
 ;==========================================================
 
 [colors]
-background = #CC887479
-background-alt = #CC55645F
-foreground = #010312
-foreground-alt = #014C74
-primary = #9dbf9e
-secondary = #d0d6b5
-alert = #f9b5ac
+background = #CC45484b
+background-alt = #CC36393b
+foreground = #eee6ab
+foreground-alt = #c5bc8e
+primary = #eee6ab
+secondary = #c5bc8e
+alert = #F4ABA2
 color1 = #887479
 color2 = #95867F
 color3 = #55645F
@@ -32,9 +32,9 @@ color4 = #778370
 
 [bar/topbar]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 96%
+width = 97%
 height = 27
-offset-x = 3%
+offset-x = 1%
 offset-y = 1%
 radius = 6.0
 fixed-center = true 
@@ -48,7 +48,7 @@ line-color = #f00
 border-size = 4
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 1
@@ -64,9 +64,10 @@ modules-left = powermenu bspwm moc
 modules-center = updates-void date
 modules-right = redshift alsa wlan eth battery
 
-tray-position = right
-tray-padding = 2
+tray-position = right 
+tray-padding = 0
 tray-background = ${colors.background} 
+tray-offset-x = 4 
 
 ;wm-restack = bspwm
 
