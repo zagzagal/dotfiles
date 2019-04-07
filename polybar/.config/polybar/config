@@ -312,7 +312,7 @@ menu-0-1-exec = sudo poweroff
 [module/updates-void]
 type = custom/script
 exec = ~/.config/polybar/updates-void.fish
-interval = 600
+interval = 120
 
 format = <label>
 format-foreground = ${colors.alert}
