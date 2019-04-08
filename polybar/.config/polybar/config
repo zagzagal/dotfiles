@@ -32,7 +32,7 @@ color4 = #778370
 
 [bar/topbar]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 97%
+width = 98%
 height = 27
 offset-x = 1%
 offset-y = 1%
@@ -58,13 +58,15 @@ font-0 = hack:fontformat=truetype:size=8;1
 font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = optien:fontformat=truetype:size=9;1
+font-4 = Font Awesome 5 Brands:size=10;0
 
 ;modules-left = powermenu cpu memory bspwm moc
 modules-left = powermenu bspwm moc
-modules-center = updates-void date
+modules-center = updates-void date dropbox
 modules-right = redshift alsa wlan eth battery
 
-tray-position = right 
+tray-postin = none
+;tray-position = right 
 tray-padding = 0
 tray-background = ${colors.background} 
 tray-offset-x = 4 
@@ -343,6 +345,16 @@ format-foreground = ${colors.background-alt}
 
 ;format = <label>
 ;format-underline = ${colors.secondary}
+
+[module/dropbox]
+type = custom/script
+exec = ~/.config/polybar/dropbox.fish
+interval = 10
+
+format = <label>
+format-foreground = ${colors.foreground-alt}
+
+label-font = 0
 
 [settings]
 screenchange-reload = true
