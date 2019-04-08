@@ -96,6 +96,7 @@ label-focused-padding = 2
 ;label-occupied = %{T4}%{F#E0A458}%name%%{F-}%{T-}
 lable-occupied = %{T4}%name%%{T-}
 label-occupied-padding = 1
+label-occupied-foreground = ${colors.foreground-alt}
 
 label-urgent = %{T4}%name%!%{T-}
 label-urgent-background = ${colors.alert}
