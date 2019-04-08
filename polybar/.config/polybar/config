@@ -61,7 +61,7 @@ font-3 = optien:fontformat=truetype:size=9;1
 font-4 = Font Awesome 5 Brands:size=10;0
 
 ;modules-left = powermenu cpu memory bspwm moc
-modules-left = powermenu bspwm moc
+modules-left = bspwm moc
 modules-center = updates-void date dropbox
 modules-right = redshift alsa wlan eth battery
 
@@ -302,8 +302,10 @@ format-spacing = 1
 
 label-open = 
 label-open-foreground = ${colors.alert}
+label-open-font = 6
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
+label-close-font = 6
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
@@ -338,14 +340,6 @@ interval = 60
 
 format = %{T4}<label>%{T-}
 format-foreground = ${colors.background-alt}
-
-;[module/newBattery]
-;type = custom/script
-;exec = ~/.config/polybar/batnote
-;tail = true
-
-;format = <label>
-;format-underline = ${colors.secondary}
 
 [module/dropbox]
 type = custom/script
