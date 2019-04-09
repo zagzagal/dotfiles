@@ -15,19 +15,19 @@ while true
   case PAUSE
     set -l title (echo $info | string match -r 'Title: (.*)Art' )
     if test $status -ne 0
-      echo "Paused: No title"
+      echo "%{T6}%{T-} No title"
     else
-      echo "Paused: $title[2]"
+      echo "%{T6}%{T-} $title[2]"
     end
   case PLAY
     set -l title (echo $info | string match -r 'Title: (.*)Art' )
     if test $status -ne 0
-      echo "Playing: No title"
+      echo " No title"
     else
-      echo "Playing: $title[2]"
+      echo " $title[2]"
     end
   case STOP
-    echo "Stopped"
+    echo "%{T6}%{T-}"
   case "*"
     echo ""
   end
