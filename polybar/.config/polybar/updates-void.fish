@@ -1,8 +1,8 @@
 #! /usr/bin/env fish
 
-set -l count (nmcli | grep -w "connected" | wc -l)
+set -l count (nmcli | grep -w -i "connected" | wc -l)
 if test $count -eq 0
-  echo "Waiting for Net"
+  echo ""
   exit 1 
 end
 
