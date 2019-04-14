@@ -6,6 +6,8 @@ if test $count -eq 0
   exit 1 
 end
 
+sudo xbps-install -S > /dev/null
+
 set -l updates (xbps-install -Suvn 2> /dev/null | string match -a -e "Found")
 
 if test $status -ne 0
