@@ -17,13 +17,13 @@
 ;==========================================================
 
 [colors]
-background = #CC45484b
-background-alt = #CC36393b
-foreground = #eee6ab
-foreground-alt = #c5bc8e
-primary = #eee6ab
-secondary = #c5bc8e
-alert = #F4ABA2
+background = #8C4C5B5C
+background-alt = #8C070709
+foreground = #FFFFFF
+foreground-alt = #
+primary = #FFFFFF
+secondary = #00F8FB
+alert = #F1F227
 color1 = #887479
 color2 = #95867F
 color3 = #55645F
@@ -32,11 +32,11 @@ color4 = #778370
 
 [bar/topbar]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 98%
+width = 100%
 height = 27
-offset-x = 1%
-offset-y = 1%
-radius = 6.0
+offset-x = 0
+offset-y = -1 
+radius = 0
 fixed-center = true 
 
 background = ${colors.background}
@@ -341,7 +341,7 @@ format-foreground = ${colors.secondary}
 
 [module/dropbox]
 type = custom/script
-exec = ~/.config/polybar/dropbox.fish
+exec = ~/.config/polybar/gdrop
 interval = 10
 
 format = <label>
@@ -358,7 +358,7 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 2
+margin-bottom = 2
 
 ; vim:ft=dosini

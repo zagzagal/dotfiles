@@ -4,17 +4,14 @@ sxhkd &
 
 bspc monitor -d  I II III
 
-bspc config border_width         2
-bspc config window_gap          12
+bspc config border_width         1
+bspc config window_gap           5 
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a vivaldi-stable desktop='^1'
-bspc rule -a firefox desktop='^1'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+bspc rule -a '*:firefox' desktop='^1'
+bspc rule -a '*:zathura' state=tiled
 
 ~/.config/bspwm/autostart
