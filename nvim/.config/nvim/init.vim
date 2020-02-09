@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'dag/vim-fish'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'othree/html5.vim'
+Plug 'zah/nim.vim'
 
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -49,6 +50,21 @@ if has ('nvim')
 	" enable deoplete on startup
 	let g:deoplete#enable_at_startup = 1
 endif
+
+"----------------------------------------------
+" Plugin: zah/nim.vim
+" ---------------------------------------------
+fun! JumpToDef()
+	if exists("*GotoDefinition_" . &filetype)
+		call GotoDefinition_{&filetype}()
+	else
+		exe "norm! \<C-]>"
+	endif
+endf
+
+" Jump to tap
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef<cr>i
 
 "----------------------------------------------
 " Plugin: vim-airline/vim-airline

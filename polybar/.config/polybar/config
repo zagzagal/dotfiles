@@ -312,6 +312,7 @@ menu-0-1-exec = sudo poweroff
 
 [module/updates-void]
 type = custom/script
+exec-if = ~/.config/polybar/isconnected.fish
 exec = ~/.config/polybar/updates-void.fish
 interval = 120
 
@@ -341,6 +342,7 @@ format-foreground = ${colors.secondary}
 
 [module/dropbox]
 type = custom/script
+exec-if = ~/.config/polybar/isconnected.fish
 exec = ~/.config/polybar/gdrop
 interval = 10
 

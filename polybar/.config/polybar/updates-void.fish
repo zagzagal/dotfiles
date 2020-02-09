@@ -1,11 +1,5 @@
 #! /usr/bin/env fish
 
-set -l count (nmcli | grep -w -i "connected" | wc -l)
-if test $count -eq 0
-  echo ""
-  exit 1 
-end
-
 sudo xbps-install -S > /dev/null
 
 set -l updates (xbps-install -Suvn 2> /dev/null | string match -a -e "Found")

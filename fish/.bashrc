@@ -7,6 +7,7 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/go/bin
 
 exec fish
 
