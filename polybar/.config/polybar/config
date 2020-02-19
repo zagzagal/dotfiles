@@ -60,7 +60,7 @@ font-2 = Monofur Nerd Font:fontformat=truetype:size=10;0
 
 ;modules-left = powermenu cpu memory bspwm moc
 modules-left = bspwm moc
-modules-center = updates-void date dropbox
+modules-center = date dropbox
 modules-right = redshift alsa wlan eth battery
 
 tray-postin = none
