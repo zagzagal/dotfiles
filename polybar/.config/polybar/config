@@ -18,12 +18,12 @@
 
 [colors]
 background = #8C4C5B5C
-background-alt = #8C070709
-foreground = #FFFFFF
+background-alt = #9c87ed
+foreground = #d8d8c0
 foreground-alt = #
 primary = #FFFFFF
-secondary = #00F8FB
-alert = #F1F227
+secondary = #f2cd4f
+alert = #ef4335
 color1 = #887479
 color2 = #95867F
 color3 = #55645F
@@ -60,7 +60,7 @@ font-2 = Monofur Nerd Font:fontformat=truetype:size=10;0
 
 ;modules-left = powermenu cpu memory bspwm moc
 modules-left = bspwm moc
-modules-center = date dropbox
+modules-center = date 
 modules-right = redshift alsa wlan eth battery
 
 tray-postin = none
