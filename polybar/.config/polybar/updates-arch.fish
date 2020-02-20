@@ -1,12 +1,14 @@
 #! /usr/bin/env fish
 
-sudo xbps-install -S > /dev/null
-
-set -l updates (xbps-install -Suvn 2> /dev/null | string match -a -e "Found")
+set -l updates (yay -Qu 2> /dev/null | wc -l)
 
 if test $status -ne 0
   echo ""
 else
-  set -l num (count $updates)
-  echo "$num updates"
+  if test $updates -ne 0
+    set -l num (count $updates)
+    echo "$num updates"
+  else
+    echo ""
+  end
 end
