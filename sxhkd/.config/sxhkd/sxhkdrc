@@ -21,7 +21,7 @@ super + Escape
 
 # quit bspwm normally
 super + alt + Escape
-	sudo poweroff	
+	poweroff	
 
 # close and kill
 super + {_,shift + }w
