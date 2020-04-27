@@ -1,6 +1,6 @@
 #! /usr/bin/env fish
 
-set -l updates (yay -Qu 2> /dev/null | wc -l)
+set -l updates (checkupdates 2> /dev/null | wc -l)
 
 if test $status -ne 0
   echo ""
