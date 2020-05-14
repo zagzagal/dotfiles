@@ -1,3 +1,3 @@
 function update -d "Update all Void Linux Packages"
-	sudo yay -Syu
+	yay -Syu
 end
