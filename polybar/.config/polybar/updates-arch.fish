@@ -9,7 +9,7 @@ set -l total (math $updates + $aurUpdates)
 if test $status -ne 0
   echo ""
 else
-  if test $status -ne 0
+  if test $total -ne 0
     #set -l num (count $updates)
     echo "$total updates"
   else
