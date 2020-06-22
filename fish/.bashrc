@@ -8,6 +8,7 @@ PS1='[\u@\h \W]\$ '
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
+export BEMENU_BACKEND=wayland
 
 exec fish
 
