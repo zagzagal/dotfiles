@@ -1,0 +1,19 @@
+widgets:
+  - widget: exec
+    command: ~/.bin/updates-arch.fish
+    templates: >
+        [{
+            "color": "#2e9ef4" 
+        }]
+  
+  - widget: wrapper
+    command: /usr/bin/conky -c /home/paul/.config/sway/conky.conf 2> /tmp/conky.log
+
+  - widget: clock
+    format: Jan _2 Mon 15:04:05 # https://golang.org/pkg/time/#Time.Format
+    templates: >
+        [{
+            "color": "#ffffff",
+            "separator": true,
+            "separator_block_width": 21
+        }]
